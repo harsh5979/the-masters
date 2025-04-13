@@ -76,8 +76,8 @@ const ProtectedRoute = ({ children }) => {
   if (!isAuthenticated && !user) {
     return <Navigate to="/login" replace />;
   }
-  if (user?.isVerified && !user?.profileCompleted) {
-    return <Navigate to="/complete-profile" replace />;
+  if (!user?.isVerified ) {
+    return <Navigate to="/verify-email" replace />;
   }
   return children;
 };
@@ -87,7 +87,7 @@ const VerifyedRoute = ({ children }) => {
   if (!isEmail && !user?.isVerified && !isprofileCompleted ) {
     return <Navigate to="/signup" replace />;
   }
-  if (user?.isVerified && !user?.profileCompleted ) {
+  if (user?.isVerified && !user?.profileCompleted) {
     return <Navigate to="/complete-profile" replace />;
   }
   return children;
@@ -178,8 +178,8 @@ function MainContent() {
               path="/profile"
               element={
                 <ProtectedRoute>
-                  <ProfilePage />
-                </ProtectedRoute>
+                    <ProfilePage />
+                  </ProtectedRoute>
               }
             />
             <Route path="/clientdashboard" element={

@@ -44,6 +44,8 @@ const EmailVerificationPage = () => {
       
       await verifyEmail(+code.join(""));
       navigate("/complete-profile");
+      window.location.reload();
+
     } catch (error) {
       
     }
