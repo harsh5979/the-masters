@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&display=swap");
+@import url("https://use.typekit.net/nvc4ckw.css");
+
+@import "tailwindcss";
+
+
+
+.removeLinkHover {
+  @apply hover:after:w-[0] text-gray-800 ;
+}
+.RLH {
+  @apply hover:after:w-[0] text-gray-400 mt-2;
+}
+.label {
+  @apply block text-gray-400 my-2; 
+}
+.rubfont {
+  font-family: "Rubik Wet Paint", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+:root {
+  /* Semi-transparent dark blue background for card overlay */
+  --primary-bg-color: rgba(224, 225, 232, 0.5);
+
+  /* Custom blue-to-purple gradient */
+  --gradient-bg-color: linear-gradient(to bottom right, #3b82f6, #9333ea);
+}
+
+body {
+  /* Apply the gradient as the background */
+  background: var(--gradient-bg-color);
+  background: rgb(6, 2, 49);
+  /* Fallback to solid color if gradients are not supported */
+  /* background-color: var(--primary-bg-color); */
+  color: white;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  backdrop-filter: blur(100%);
+  filter: blur(1.2);
+  animation: blink 1.4s infinite ease-in-out;
+}
+.background-stars {
+  position: fixed; /* Ensure it covers the entire viewport */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden; /* Prevents stars from overflowing */
+  z-index: -1; /* Behind all other content */
+  /* background: black;  */
+}
+
+.font {
+  font-family: rig-solid-bold-fill, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* scrolling...........
+::-webkit-scrollbar {
+  width: 7px;
+  height: auto;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 4px;
+  border: 1px solid #555;
+} */
+/* Hide scrollbar for Chrome, Safari, and Opera */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge, and Firefox */
+.hide-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+
+.aa {
+  padding: 7px 10px;
+  position: relative;
+}
+.aa::after {
+  content: "";
+  position: absolute;
+  border-radius: 55px;
+  background-color: #093465;
+  height: 3px;
+  width: 0;
+  left: 0px;
+  bottom: 0px;
+  transition: 0.3s;
+}
+
+.aa:hover {
+  color: #443aa1;
+}
+
+.aa:hover::after {
+  width: 100%;
+}
+.no-arrows::-webkit-inner-spin-button,
+.no-arrows::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Hide arrows in Firefox */
+.no-arrows[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* Phone style */
+@media (max-width: 900px) {
+  
+  .footer {
+    display: none;
+  }
+  .aa {
+    padding: 0px;
+  }
+}
+
